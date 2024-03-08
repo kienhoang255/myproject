@@ -1,0 +1,8 @@
+<div class="carosel">
+  <div class="messenger-box">
+    <app-messenger [text]="text" username="Chị B" id="Chị B" [messageData]="messageData"
+      (message)="onSendMessage($event)"></app-messenger>
+    <app-messenger [text]="text" username="Anh A" id="Anh A" [messageData]="messageData"
+      (message)="onSendMessage($event)" (messageIcon)="onSendLike($event)"></app-messenger>
+  </div>
+</div>

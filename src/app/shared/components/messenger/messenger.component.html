@@ -1,0 +1,35 @@
+<div class="mes-container" [class.on-focus]="onFocus">
+  <div class="mes-tab" (click)="toggleBoxMessage()">{{ username }}</div>
+
+  <!-- [id]="id"
+      [messageData]="messageData" -->
+  <ng-container *ngIf="hideBox">
+    <div class="mes-content">
+      <app-message-display [isChatting]="text" [messageData]="messageData" [id]="id">
+      </app-message-display>
+
+      <div class="mes-actions">
+        <input class="mes-actions-input" type="text" name="messenger" autocomplete="off" [ngModel]="text"
+          (ngModelChange)="text = $event" (focus)="toggleFocus()" (blur)="toggleFocus()" />
+
+
+        <ng-container *ngIf="!text;else noText">
+          <button class="mes-actions-send-btn bg-blue" (click)="onClickSend()">
+            <mat-icon class="icon">
+              thumb_up
+            </mat-icon>
+          </button>
+        </ng-container>
+
+        <ng-template #noText>
+          <button class="mes-actions-send-btn" (click)="onClickSend()">
+            <mat-icon class="icon">
+              send
+            </mat-icon>
+          </button>
+        </ng-template>
+
+      </div>
+    </div>
+  </ng-container>
+</div>

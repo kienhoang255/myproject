@@ -1,0 +1,9 @@
+.messenger-box {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  gap: 22px;
+  /* height: 360px; */
+  align-items: flex-end;
+}

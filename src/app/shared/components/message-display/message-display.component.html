@@ -1,0 +1,51 @@
+<div class="display">
+  <div class="display-list">
+    <ng-container *ngIf="!messageData; else hasMessage">
+      Let's text
+    </ng-container>
+
+    <ng-template #hasMessage>
+      <ng-container *ngFor="let item of messageData">
+        <ng-container *ngIf="item.username == id; else notMessenger">
+          <div class="display-item-reverse">
+            <span class="display-item-avatar">
+              {{ item.username | formatUsername }}
+            </span>
+
+            <ng-container *ngIf="item.icon;else noIcon">
+              <mat-icon class="icon display-item-message-reverse">
+                {{ item.icon }}
+              </mat-icon>
+            </ng-container>
+            <ng-template #noIcon>
+              <div class="display-item-message-reverse">{{ item.message }}</div>
+            </ng-template>
+
+          </div>
+        </ng-container>
+
+        <ng-template #notMessenger>
+          <div class="display-item">
+            <span class="display-item-avatar">
+              {{ item.username | formatUsername }}
+            </span>
+
+            <ng-container *ngIf="item.icon;else noIcon">
+              <mat-icon class="icon display-item-message">
+                {{ item.icon }}
+              </mat-icon>
+            </ng-container>
+            <ng-template #noIcon>
+              <div class="display-item-message">{{ item.message }}</div>
+            </ng-template>
+
+          </div>
+        </ng-template>
+      </ng-container>
+    </ng-template>
+  </div>
+
+  <div class="display-noti">
+    <app-noti-chatting [isChatting]="isChatting"></app-noti-chatting>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <nav class="nav">
+    <div class="nav-left">
+      <a class="nav-btn" [routerLink]="'/home'">Home</a>
+      <a class="nav-btn" [routerLink]="'/post'">Post</a>
+    </div>
+    <div id="test" class="right-nav">
+      <ng-container *ngIf="isLogin; else isNotLogin">
+        <div id="dropdown-menu" class="dropdown-btn" (click)="toggleMenu()">
+          {{ username | formatUsername }}
+        </div>
+
+        <ng-template [ngIf]="isShowMenu">
+          <div class="dropdown-container" (click)="toggleMenu()">
+            <div
+              class="dropdown-menu"
+              [style.top]="'calc(' + pos?.y + 'px' + ' + 20px)'"
+              [style.left]="'calc(' + pos?.x + 'px' + ' - 320px)'"
+            >
+              <button class="dropdown-menu-btn">Profile</button>
+              <button class="dropdown-menu-btn">My post</button>
+              <button class="dropdown-menu-btn" (click)="handleLogout()">
+                Log out
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+
+      <ng-template #isNotLogin>
+        <a class="direct-login-btn" routerLink="/login">Login</a>
+      </ng-template>
+    </div>
+  </nav>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

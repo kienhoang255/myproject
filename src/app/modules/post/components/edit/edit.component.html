@@ -1,0 +1,24 @@
+<div class="content">
+  <span class="title">Edit post</span>
+
+  <ng-container *ngIf="!detail; else hasPost">Loading...</ng-container>
+
+  <ng-template #hasPost>
+    <div class="post-title">
+      <span class="post-title-span">Title: </span>
+      <input class="post-title-input" type="text" [(ngModel)]="detail.title" />
+    </div>
+
+    <div class="post-body">
+      <span class="post-body-span">Body</span>
+      <textarea [(ngModel)]="detail.body" class="post-body-input" name="" id="" cols="30" rows="10"></textarea>
+    </div>
+  </ng-template>
+  <div class="post-action">
+    <button class="btn post-action-back-btn" (click)="handleOnBack()">Back</button>
+    <button class="btn post-action-cancel-btn" (click)="handleOnCancel()">Cancel</button>
+    <button class="btn post-action-save-btn" (click)="handleOnSave()">
+      Save
+    </button>
+  </div>
+</div>

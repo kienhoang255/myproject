@@ -1,0 +1,20 @@
+<div class="container">
+  <ng-container *ngIf="!listPosts; else hasListPosts">Loading...</ng-container>
+
+  <ng-template #hasListPosts>
+    <ng-container *ngFor="let item of listPosts">
+      <div
+        class="item"
+        (click)="readPost(item.id)"
+        (mouseenter)="handleToggleRead(item.id)"
+        (mouseleave)="handleToggleRead(-1)"
+      >
+        <div class="item-title">Title: -- {{ item.title }} --</div>
+        <div class="item-body">{{ item.body | shortenText : 20 }}</div>
+        <ng-container *ngIf="isHover && currentIdHover == item.id">
+          <div class="btn-direction">Read more!</div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-template>
+</div>

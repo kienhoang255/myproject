@@ -1,0 +1,151 @@
+.display {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.display-list {
+  overflow: hidden;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+
+  scrollbar-color: grey transparent;
+  scrollbar-width: thin;
+}
+
+.display-list::-webkit-scrollbar-thumb {
+  border-radius: 8px !important; /* Adjust as desired */
+}
+
+/* Firefox */
+.display-list::scrollbar-thumb {
+  border-radius: 8px; /* Adjust as desired */
+}
+
+.display-item {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+}
+.display-item:first-child {
+  margin-top: 8px;
+}
+
+.display-item:last-child {
+  margin-bottom: 20px;
+}
+
+.display-item-reverse {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 2px;
+}
+
+.display-item-reverse:first-child {
+  margin-top: 8px;
+}
+
+.display-item-reverse:last-child {
+  margin-bottom: 20px;
+}
+
+.display-item-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Start handle group message */
+.display-item-reverse + .display-item-reverse + .display-item {
+  margin-top: 8px;
+}
+
+.display-item + .display-item + .display-item-reverse {
+  margin-top: 8px;
+}
+
+.display-item + .display-item-reverse {
+  margin-top: 8px;
+}
+
+.display-item-reverse + .display-item {
+  margin-top: 8px;
+}
+
+/* End handle group message */
+
+.display-item-message {
+  height: 38px;
+  width: 80%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  /* border-radius: 12px 12px 12px 0; */
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+.display-item-message-reverse {
+  height: 38px;
+  width: 80%;
+  background-color: #4150ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* border-radius: 12px 12px 0 12px; */
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+/* Start handle group message */
+
+.display-item-reverse:first-child > .display-item-message-reverse {
+  border-radius: 12px 12px 0 12px;
+}
+
+.display-item + .display-item-reverse > .display-item-message-reverse {
+  border-radius: 12px 12px 0 12px;
+}
+
+.display-item:first-child > .display-item-message {
+  border-radius: 12px 12px 12px 0;
+}
+
+.display-item-reverse + .display-item > .display-item-message {
+  border-radius: 12px 12px 12px 0;
+}
+
+/* End handle group message */
+
+.display-noti {
+  height: 14px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  /* padding-left: 12px; */
+  box-sizing: border-box;
+}
+
+.icon {
+  background-color: transparent;
+  color: #4150ff;
+}
+
+.icon-reverse {
+}

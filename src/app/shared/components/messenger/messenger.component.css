@@ -1,0 +1,72 @@
+.mes-container {
+  border-radius: 12px 12px 0 0;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  bottom: 0;
+  width: 290px;
+}
+
+.mes-tab {
+  height: 40px;
+  width: 290px;
+  border-radius: 12px 12px 0 0;
+  background-color: rgb(172, 170, 170);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.mes-tab:hover {
+  cursor: pointer;
+}
+
+.mes-content {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.mes-actions {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 12px;
+  margin-bottom: 4px;
+}
+
+.mes-actions-input {
+  height: 46px;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 0px;
+  background-color: #f0f2f5;
+  outline: none;
+  font-size: 16px;
+}
+
+.mes-actions-send-btn {
+  height: 40px;
+  width: 60px;
+  border: 0px;
+  background-color: transparent;
+}
+.mes-actions-send-btn:hover > .icon {
+  color: #0866ff;
+}
+
+.on-focus > .mes-tab {
+  background-color: #0866ff;
+}
+
+.bg-blue {
+  color: #0866ff;
+}

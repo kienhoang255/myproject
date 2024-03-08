@@ -1,0 +1,18 @@
+<ng-container *ngIf="!author || !detail; else hasPost">Post no longer exist!</ng-container>
+
+<ng-template #hasPost>
+  <div class="detail">
+    <div class="detail-author">
+      <div class="detail-author-avatar">
+        {{ author?.username | formatUsername }}
+      </div>
+      <div class="detail-author-name">{{ author?.username }}</div>
+    </div>
+    <div class="detail-title">{{ detail?.title }}</div>
+    <div class="detail-body">{{ detail?.body }}</div>
+
+    <button class="detail-edit-btn" (click)="directToEditPost(detail?.id)">
+      Edit
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+<div class="container">
+  <form class="content" [formGroup]="loginForm" (submit)="handleLogin($event)">
+    <h1 class="title">LOGIN</h1>
+    <input
+      class="input"
+      id="username"
+      type="text"
+      formControlName="username"
+      placeholder="username"
+    />
+    <input
+      class="input"
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="password"
+    />
+    <button class="btn" type="submit">Login</button>
+    <a class="direct-btn" routerLink="/register">Create account!</a>
+  </form>
+</div>
